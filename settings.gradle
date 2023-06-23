@@ -13,8 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-enableFeaturePreview("VERSION_CATALOGS")
-
 rootProject.name = "ByteFeed"
 include ':app'
 include ':feature-home'

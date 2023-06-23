@@ -1,9 +1,14 @@
 [versions]
+agp = '8.0.2'
 core-ktx = '1.7.0'
 runtime-ktx = '2.3.2'
 activity-compose = '1.7.2'
 compose-ui = '1.4.3'
+compose-compiler = '1.4.7'
 junit = '4.13.2'
+spotless = '6.19.0'
+ktlint = '11.4.2'
+kotlin = '1.8.21'
 
 [libraries]
 androidx-core-ktx = "androidx.core:core-ktx:1.10.1"
@@ -19,7 +24,14 @@ compose-ui-test = "androidx.compose.ui:ui-test-junit4:1.4.3"
 compose-ui-tooling = "androidx.compose.ui:ui-tooling:1.4.3"
 compose-ui-test-manifest = "androidx.compose.ui:ui-test-manifest:1.4.3"
 
-[bundles]
+spotless-lib = { module = "com.diffplug.spotless:spotless-lib", version.ref = "spotless" }
+
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
+[bundles]

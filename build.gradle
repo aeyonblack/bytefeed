@@ -1,10 +1,25 @@
 buildscript {
     ext {
-        compose_ui_version = '1.4.3'
+        buildConfig = [
+                'compileSdk': 33,
+                'minSdk': 24,
+                'targetSdk': 33
+        ]
     }
-}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+}
+
 plugins {
-    id 'com.android.application' version '7.4.2' apply false
-    id 'com.android.library' version '7.4.2' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.spotless) apply false
+    alias(libs.plugins.ktlint) apply false
+}
+
+subprojects {
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
 }
