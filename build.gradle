@@ -17,11 +17,10 @@ plugins {
 }
 
 allprojects {
+    apply plugin: 'base'
     apply plugin: 'com.diffplug.spotless'
     apply from: "$project.rootDir/spotless.gradle"
-}
 
-subprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
             jvmTarget = "17"
